@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Surovi (veliki, ponovno prenosljivi) podatki - hranimo samo končno tekme.csv
+podatki/csv/
+
+# Urejevalniki / OS
+.vscode/
+.DS_Store
