@@ -2,19 +2,19 @@ import pandas as pd
 
 
 def doloci_zmagovalca(vrstica):
-    """Vrne 'Domacini', 'Gostje' ali 'Neodloceno' glede na goli_domaci/goli_gosti."""
+    """Vrne 'Domačini', 'Gostje' ali 'Neodločeno' glede na goli_domaci/goli_gosti."""
     if pd.isna(vrstica["goli_domaci"]) or pd.isna(vrstica["goli_gosti"]):
         return "Ni podatkov"
     elif vrstica["goli_domaci"] > vrstica["goli_gosti"]:
-        return "Domacini"
+        return "Domačini"
     elif vrstica["goli_domaci"] < vrstica["goli_gosti"]:
         return "Gostje"
     else:
-        return "Neodloceno"
+        return "Neodločeno"
 
 
 def je_veliko_golov(vrstica, prag=4):
-    """Vrne True, ce je bilo na tekmi vec golov kot prag (privzeto 4)."""
+    """Vrne True, če je bilo na tekmi več golov kot prag (privzeto 4)."""
     if pd.isna(vrstica["goli_domaci"]) or pd.isna(vrstica["goli_gosti"]):
         return False
     return (vrstica["goli_domaci"] + vrstica["goli_gosti"]) > prag
@@ -22,7 +22,7 @@ def je_veliko_golov(vrstica, prag=4):
 
 # Imena ekip se skozi sezone rahlo razlikujejo (npr. "Everton" vs "Everton FC",
 # "Manchester Utd" vs "Manchester United FC"), zato pri prepoznavanju derbijev
-# preverjamo, ali kljucna beseda nastopa v imenu ekipe, namesto tocnega ujemanja.
+# preverjamo, ali ključna beseda nastopa v imenu ekipe, namesto točnega ujemanja.
 ZNANI_DERBIJI = [
     ({"Manchester United", "Manchester Utd"}, {"Manchester City"}),
     ({"Liverpool"}, {"Everton"}),
@@ -38,7 +38,7 @@ def _vsebuje_katero(ime_ekipe, mnozica_kljucnih_besed):
 
 
 def je_derbi(vrstica):
-    """Vrne True, ce gre tekma med dvema ekipama iz istega znanega derbija."""
+    """Vrne True, če gre tekma med dvema ekipama iz istega znanega derbija."""
     domaca = vrstica["domaca_ekipa"]
     gostujoca = vrstica["gostujoca_ekipa"]
 
@@ -69,9 +69,9 @@ PRIPONKE_ZA_ODSTRANITI = (" FC", " AFC", " CF")
 
 def normaliziraj_ime_ekipe(ime):
     """
-    Poenoti razlicne zapise istega imena ekipe (npr. 'Everton FC' -> 'Everton',
+    Poenoti različne zapise istega imena ekipe (npr. 'Everton FC' -> 'Everton',
     'Manchester Utd' -> 'Manchester United'), da lahko ekipe pravilno grupiramo
-    skozi vec sezon.
+    skozi več sezon.
     """
     ime = ime.strip()
     for priponka in PRIPONKE_ZA_ODSTRANITI:
