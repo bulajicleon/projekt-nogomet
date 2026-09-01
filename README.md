@@ -5,7 +5,7 @@ več kot 10.000 nogometnih tekmah (Premier League 2010/11-2020/21, La Liga
 2012/13-2020/21, Bundesliga 2010/11-2020/21), jih ustrezno predela, shrani in
 analizira (povprečno število golov po ligi, domača prednost, trend skozi
 sezone, derbiji).
-Vir podatkov: footballcsv - javno dostopni
+Moj vir podatkov: footballcsv - javno dostopni
 (public domain, CC0) rezultati tekem v CSV obliki.
 
 
@@ -38,7 +38,7 @@ da vidiš rezultate), z naslednjimi razdelki:
 
 
 ## Ugotovitve (na dejanskih podatkih)
-
+  V narejeni analizi sem prišel do raznih ugotovitev.
 -Bundesliga ima v povprečju največ golov na tekmo (~2,96), sledita Premier League (~2,74) in La Liga (~2,71).
 -Domača prednost je v vseh treh ligah podobna: ~45 % zmag domačih, ~24-25 % neodločenih, ~29-31 % zmag gostov - a v sezonah brez gledalcev (2019/20-2020/21, COVID-19) opazno pade, kar podpira hipotezo o vplivu navijačev na rezultat.
 - Več kot 4 gole je padlo na 1.573 od 10.426 tekem (~15%).
