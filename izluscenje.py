@@ -5,15 +5,14 @@ import re
 MAPA_PODATKI = "podatki"
 MAPA_CSV = os.path.join(MAPA_PODATKI, "csv")
 
-# Prikazna imena lig glede na kodo iz imena datoteke
+
 PRIKAZNA_IMENA_LIG = {
     "eng.1": "Premier League",
     "es.1": "La Liga",
     "de.1": "Bundesliga",
 }
 
-# FT stolpec je oblike "2-1" ali "2–1" (dolgi pomišljaj); nekatere tekme
-# (odpovedane/preložene) nimajo rezultata.
+
 VZOREC_REZULTATA = re.compile(r"^\s*(\d+)\s*[-–]\s*(\d+)\s*$")
 
 
@@ -75,7 +74,7 @@ def izlusci_podatke():
     print(f"Začenjam obdelavo {len(datoteke)} CSV datotek...")
 
     for ime_datoteke in datoteke:
-        # ime_datoteke je oblike "england_eng.1_2020-21.csv"
+        
         deli = ime_datoteke.replace(".csv", "").split("_")
         koda_lige = deli[1]
         sezona = deli[2]
