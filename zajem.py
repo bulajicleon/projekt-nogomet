@@ -2,15 +2,14 @@ import os
 import time
 import requests
 
-# Mape za shranjevanje
+
 MAPA_PODATKI = "podatki"
 MAPA_CSV = os.path.join(MAPA_PODATKI, "csv")
 
-# Vir podatkov: footballcsv (github.com/footballcsv), javno dostopni CSV-ji z
-# rezultati tekem po sezonah in ligah.
+
 OSNOVNI_URL = "https://raw.githubusercontent.com/footballcsv"
 
-# (ime_repozitorija, koda_lige_v_datoteki, prikazno_ime_lige, seznam_sezon)
+
 LIGE = [
     ("england", "eng.1", "Premier League",
      ["2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16",
