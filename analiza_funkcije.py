@@ -20,9 +20,7 @@ def je_veliko_golov(vrstica, prag=4):
     return (vrstica["goli_domaci"] + vrstica["goli_gosti"]) > prag
 
 
-# Imena ekip se skozi sezone rahlo razlikujejo (npr. "Everton" vs "Everton FC",
-# "Manchester Utd" vs "Manchester United FC"), zato pri prepoznavanju derbijev
-# preverjamo, ali ključna beseda nastopa v imenu ekipe, namesto točnega ujemanja.
+
 ZNANI_DERBIJI = [
     ({"Manchester United", "Manchester Utd"}, {"Manchester City"}),
     ({"Liverpool"}, {"Everton"}),
@@ -52,8 +50,7 @@ def je_derbi(vrstica):
     return False
 
 
-# Posebni primeri, kjer se ime ekipe skozi sezone razlikuje bolj kot le
-# s priponko (npr. okrajšava namesto polnega imena).
+
 ALIASI_EKIP = {
     "Manchester Utd": "Manchester United",
     "Newcastle Utd": "Newcastle United",
