@@ -27,7 +27,7 @@ da vidiš rezultate), z naslednjimi razdelki:
 1. Osnovni pregled podatkov (število tekem/sezon po ligi)
 2. Čiščenje podatkov - poenotenje različnih zapisov imen ekip
 3. Povprečno število golov na tekmo po ligi
-4  Trend golov skozi sezone - primerjava vseh treh lig na enem grafu
+4.  Trend golov skozi sezone - primerjava vseh treh lig na enem grafu
 5. Porazdelitev števila golov na tekmo (histogrami)
 6. Domača prednost po ligi (zmage domačih/gostov/neodločeno)
 7. Domača prednost skozi čas (vključno z opazko o sezonah brez gledalcev, COVID-19)
