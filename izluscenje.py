@@ -28,7 +28,7 @@ def razcleni_rezultat(besedilo):
 
 def izlusci_eno_datoteko(pot_datoteke, ime_lige, sezona):
     """Prebere eno surovo CSV datoteko in vrne seznam očiščenih vrstic (slovarjev)."""
-    ocisceni_seznam = []
+    očiščeni_seznam = []
 
     with open(pot_datoteke, "r", encoding="utf-8", errors="ignore") as f:
         bralec = csv.DictReader(f)
@@ -43,7 +43,6 @@ def izlusci_eno_datoteko(pot_datoteke, ime_lige, sezona):
 
             goli_domaci, goli_gosti = razcleni_rezultat(rezultat_besedilo)
             if goli_domaci is None:
-                # tekma je bila preložena/odpovedana ali manjka podatek
                 continue
 
             ocisceni_zapis = {
@@ -55,9 +54,9 @@ def izlusci_eno_datoteko(pot_datoteke, ime_lige, sezona):
                 "liga": ime_lige,
                 "sezona": sezona,
             }
-            ocisceni_seznam.append(ocisceni_zapis)
+            očiščeni_seznam.append(ocisceni_zapis)
 
-    return ocisceni_seznam
+    return očiščeni_seznam
 
 
 def izlusci_podatke():
